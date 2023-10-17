@@ -25,7 +25,7 @@ int raizDigital(int num)
     }
     else
     {
-        return raizDigital(num/10 + num%10) ;
+        return raizDigital(num/10 + num%10);
     }
 }
 
