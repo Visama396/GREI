@@ -17,25 +17,22 @@ int intLesen(char nachricht[])
     return atoi(str);
 }
 
-bool isPrimzahl(int num, int teiler)
+int raizDigital(int num)
 {
-    if (teiler < num)
+    if (num < 10)
     {
-        if (num % teiler != 0)
-        {
-            isPrimzahl(num, ++teiler);
-        }
-        else
-        {
-            return false;
-        }
+        return num;
     }
-
-    return true;
+    else
+    {
+        return raizDigital(num/10 + num%10) ;
+    }
 }
 
 int main()
 {
-    cout << "5 ist primzahl: " << isPrimzahl(5, 1) << endl;
+    int num;
+    num = intLesen("Schreib eine Zahl zwischen 1 und 99: ");
+    cout << "Die digitalen Root von " << num << " ist " << raizDigital(num) << endl;
     return 0;
 }
